@@ -4,7 +4,7 @@ RUN apt-get update
 
 RUN pip install --upgrade pip
 RUN python -m pip install requests
-RUN python -m pip install pycld2
+RUN python -m pip install langid
 RUN python -m pip install discord
 RUN python -m pip install python-dotenv
 COPY .env /.env

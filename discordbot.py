@@ -1,6 +1,6 @@
 import discord
 import os
-import pycld2
+import langid
 from dotenv import load_dotenv
 import requests
 import json
@@ -20,8 +20,8 @@ async def on_message(message):
         return
     elif message.content:
         if len(message.content) > 4:
-            isReliable, textBytesFound, details = pycld2.detect(message.content)
-            lang = str(details[0][1])
+            a, details = langid.classify(message.content)
+            lang = str(a)
             if lang != 'ja':
                 if lang == 'un':
                     lang = ''

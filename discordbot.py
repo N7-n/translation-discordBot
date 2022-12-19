@@ -20,7 +20,7 @@ async def on_message(message):
         return
     elif message.content:
         if len(message.content) > 4:
-            a, details = langid.classify(message.content)
+            a, _ = langid.classify(message.content)
             lang = str(a)
             if lang != 'ja':
                 if lang == 'un':
